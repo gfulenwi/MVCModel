@@ -18,10 +18,10 @@ Controller.php
 7. call render view method to insert page fragment in template
 
 ## ControllerAction Base Class
-class **ControllerBase**(){
-   private method;
-   private page;
-   private accessLevel;
+class **ControllerBase**(){<br>
+   private method;<br>
+   private page;<br>
+   private accessLevel;<br>
    
    function action(){
    
