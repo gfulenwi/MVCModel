@@ -1,6 +1,6 @@
 <?php
     interface ControllerAction{
-         function process($method);
-         function render($method);
+         function processGET();
+         function processPOST();
     }
 ?>

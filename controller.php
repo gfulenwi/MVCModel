@@ -6,24 +6,23 @@
     
     //***** Get Request Method and Page Variable *****/
     $method = $_SERVER['REQUEST_METHOD'];
-    if($method=='GET'){
-        $page = $_GET['page'];
-    }
-    if($method=='POST'){
-        $page = $_POST['page'];
-    }
-
+    $page = $_REQUEST['page'];
+   
     //*****Process Controller Based on Method and Page *** */
     $controller = $controllers[$method.$page];
-    $nextView = $controller->process($method);
-
-    //**** Render View******/
-    $controller->render($method);
-
+    if($method=='GET'){
+        $controller->processGET();
+    }
+    if($method=='POST'){
+        $controller->processPOST();
+    }
 
     function loadControllers(){
         $controllers["GET"."list"] = new ContactList();
         $controllers["GET"."add"] = new ContactAdd();
+        $controllers["POST"."add"] = new ContactAdd();
+        $controllers["GET"."delete"] = new ContactDelete();
+        $controllers["POST"."delete"] = new ContactDelete();
         return $controllers;
     }
 
