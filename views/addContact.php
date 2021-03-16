@@ -28,6 +28,8 @@
                             <input type="text" class="form-control mb-3" id="username" name="username" placeholder="Enter your Username" required>
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control mb-3" id="email" name="email" placeholder="Enter your Email Address" required>
+                            <label for="passwd" class="form-label">Password</label>
+                            <input type="text" class="form-control mb-3" id="passwd" name="passwd" placeholder="Enter your Password" required>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

@@ -3,11 +3,13 @@
         private $contactID;
         private $username;
         private $email;
+        private $passwd;
 
         public function load($row){
             $this->setContactID($row['contactID']);
             $this->setUsername($row['username']);
             $this->setEmail($row["email"]);
+            $this->setPasswd($row["passwd"]);
         }
 
         public function setContactID($contactID){
@@ -32,6 +34,14 @@
 
         public function getEmail(){
             return $this->email;
+        }
+
+        public function setPasswd($passwd){
+            $this->passwd=$passwd;
+        }
+
+        public function getPasswd(){
+            return $this->passwd;
         }
     }
 ?>

@@ -8,7 +8,7 @@
         
 
         public function __construct(){
-            $this->showErrors(1);
+            $this->showErrors(0);
             $this->controllers = $this->loadControllers();
         }
 
@@ -33,6 +33,8 @@
             $controllers["POST"."add"] = new ContactAdd();
             $controllers["GET"."delete"] = new ContactDelete();
             $controllers["POST"."delete"] = new ContactDelete();
+            $controllers["GET"."login"] = new Login();
+            $controllers["POST"."login"] = new Login();
             return $controllers;
         }
 

@@ -26,12 +26,36 @@
         function processPOST(){
             $username=$_POST['username'];
             $email=$_POST['email'];
+            $passwd=$_POST['passwd'];
             $contact = new Contact();
             $contact->setUsername($username);
             $contact->setEmail($email);
+            $contact->setPasswd($passwd);
             $contactDAO = new ContactDAO();
             $contactDAO->addContact($contact);
             header("Location: controller.php?page=list");
+            exit;
+        }
+
+    }
+
+    class Login implements ControllerAction{
+
+        function processGET(){
+            include "views/login.php";
+        }
+
+        function processPOST(){
+            $username=$_POST['username'];
+            $passwd=$_POST['passwd'];
+            $contactDAO = new ContactDAO();
+            $found=$contactDAO->authenticate($username,$passwd);
+            if($found==null){
+                $nextView="Location: controller.php?page=login";
+            }else{
+                $nextView="Location: controller.php?page=list";
+            }
+            header($nextView);
             exit;
         }
 
