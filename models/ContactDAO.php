@@ -1,5 +1,5 @@
 <?php
-    require_once 'Contact.php';
+    include_once 'Contact.php';
 
     class ContactDAO {
 
