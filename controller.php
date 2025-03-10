@@ -4,7 +4,7 @@
     include_once "models/ContactDAO.php";
 
     class FrontController { 
-        private $controllers;
+        private $controllers; 
         
 
         public function __construct(){
